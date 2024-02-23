@@ -10,6 +10,7 @@
     --fs-800: 2rem;
 
     --color-gray: #dbd5c9;
+    --color-black: #403A3A;
 }
 
 * {
@@ -67,24 +68,95 @@ CSS STRUCTURE
 
 */
 
+/*  general structure of the voting machine */
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .voting-machine {
-    margin-inline: auto;
     display: flex;
     padding: 3rem;
     background-color: var(--color-gray);
+    gap: 0 3rem;
 }
 
 .display {
+    flex: 2;
     display: flex;
-    background-color: linear-gradient(to right, #E8E8E8, #C1C1C1);
+    background: linear-gradient(to right, #E8E8E8, #C1C1C1);
     border: 2px solid #555;
+    width: 50rem;
+    height: 32rem;
 }
+
+.voting-selection {
+    flex: 1;
+    background-color: var(--color-black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* right display area */
+
+.display-right {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: center;
+}
+
+/* left display area */
 
 .display-left {
-    display: grid;
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+    font-size: 1.8rem;
+    font-weight: var(--fw-300);
 }
-/*
 
-CSS ELEMENTS 
+.selection {
+    display: flex;
+}
 
-*/
+h1,
+.warning-message-top,
+.selection {
+    height: 5rem;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.box {
+    width: 3rem;
+    height: 4rem;
+    border: 1px solid black;
+    font-size: 2.5rem;
+    text-align: center;
+    line-height: 4rem;
+}
+
+.warning-message-bottom {
+    height: 100%;
+}
+
+/* Voting selection area */
+
+.numbers-line {
+    display: flex;
+}
+
+.number {
+    text-align: center;
+}
