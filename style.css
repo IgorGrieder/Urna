@@ -126,6 +126,22 @@ body {
 .selection {
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.warning-message-bottom span,
+.warning-message-top span{
+    display: none;
+}
+
+.warning-message-bottom,
+.warning-message-top {
+    display: flex;
+    align-items: center;
+}
+
+.warning-message-bottom {
+    margin-top: auto;
 }
 
 h1,
@@ -148,10 +164,6 @@ h1 {
     font-size: 2.5rem;
     text-align: center;
     line-height: 4rem;
-}
-
-.warning-message-bottom {
-    height: 100%;
 }
 
 /* Voting selection area */
