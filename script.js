@@ -11,7 +11,7 @@ const warningBottom = document.querySelector(".warning-message-bottom");
 
 let voteOption = [];
 
-// click events on the numbers and the buttons
+// ------------------------------ click events on the numbers and the buttons ------------------------------
 
 for (let item of numbers) {
     item.addEventListener("click", () => {
@@ -36,11 +36,36 @@ for (let item of numbers) {
             }
         }
     })
-}
+}   
+
+remedyVote.addEventListener("click", () => {
+    voteOption = [];
+    clearVoteSelection();
+})
+
+// ------------------------------ general functions ------------------------------
 
 // update vote selection space in the display 
 function updateVoteSelection() {
     for (let i = 0; i < voteOption.length; i++) {
         boxes[i].innerHTML = voteOption[i];
     }
+
+    // change the next number icon selection indicator
+    document.querySelector(".nextNumber").classList.remove("nextNumber");
+    if (voteOption.length < 5) {
+        boxes[voteOption.length].classList.add("nextNumber");
+    }
+}
+
+// clear the vote selection
+function clearVoteSelection() {
+    warningTop.querySelector("span").style.display = "none";
+    warningBottom.querySelector("span").style.display = "none";
+
+    for (let box of boxes) {
+        box.innerHTML = "";
+    }
+
+    boxes[0].classList.add("nextNumber");
 }

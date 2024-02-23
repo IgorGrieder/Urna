@@ -73,6 +73,12 @@ CSS STRUCTURE
 
 /*  general structure of the voting machine */
 
+@keyframes glow {
+    0% { opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { opacity: 0.2; }
+}
+
 body {
     min-height: 100vh;
     display: flex;
@@ -221,4 +227,10 @@ h1 {
 
 .confirm {
     background-color: var(--color-green);
+}
+
+.nextNumber {
+    animation-name: glow;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
 }
